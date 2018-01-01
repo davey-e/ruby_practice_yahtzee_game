@@ -7,4 +7,13 @@ attr_reader :value, :hold
     @hold = hold
   end
 
+  def roll_dice
+    if !@hold then
+      @value = rand(1..6)
+      return @value
+    else
+      return @value
+    end
+  end
+
 end

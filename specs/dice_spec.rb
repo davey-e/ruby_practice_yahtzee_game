@@ -34,4 +34,18 @@ class DiceTest < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_dont_roll_dice_if_held
+    expected = 1
+    actual = @dice1.roll_dice()
+    assert_equal(expected, actual)
+  end
+
+  def test_roll_dice_if_not_held
+    expected = true
+    dice_value = @dice2.roll_dice()
+    actual = true if dice_value.between?(1,6)
+    assert_equal(expected, actual)
+  end
+
+
 end
