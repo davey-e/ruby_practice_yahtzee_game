@@ -1,4 +1,4 @@
-class Dice
+class Die
 
 attr_reader :value, :hold
 
@@ -7,7 +7,7 @@ attr_reader :value, :hold
     @hold = hold
   end
 
-  def roll_dice
+  def roll_die
     if !@hold then
       @value = rand(1..6)
       return @value
