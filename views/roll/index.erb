@@ -1,0 +1,43 @@
+<h2>Yahtzee</h2>
+
+<div id = "dice">
+<table>
+  <tbody>
+  <% @roll.dice.each do |die| %>
+  <tr>
+    <td> <%= die.value %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+</div>
+
+<form action="index.html" method="post">
+
+  <fieldset>
+  <legend>Choose which dice to hold</legend>
+  <div>
+    <input type="checkbox" id="die1" name="holds" value="die1">
+    <label for="die1">1</label>
+  </div>
+  <div>
+    <input type="checkbox" id="die2" name="holds" value="die2">
+    <label for="die2">2</label>
+  </div>
+  <div>
+    <input type="checkbox" id="die3" name="holds" value="die3">
+    <label for="die3">3</label>
+  </div>
+  <div>
+    <input type="checkbox" id="die4" name="holds" value="die4">
+    <label for="die4">4</label>
+  </div>
+  <div>
+    <input type="checkbox" id="die5" name="holds" value="die5">
+    <label for="die5">5</label>
+  </div>
+
+</fieldset>
+
+<input type="submit" value="Submit">
+</form>
