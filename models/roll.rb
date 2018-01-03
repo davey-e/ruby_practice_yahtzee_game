@@ -6,6 +6,10 @@ class Roll
     @dice = dice
   end
 
+  def roll_all_dice()
+    @dice.each { |die| die.roll_die()}
+  end
+
   def roll_set_hold_status(hold_status_array)
     hold_status_array.each_with_index do
       |hold_status, i|

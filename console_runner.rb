@@ -13,7 +13,7 @@ require_relative("./models/round.rb")
 p "Welcome to the Yahtzee dice simulator"
 p "Your dice numbers for your first roll are:"
 
-@roll.dice.each { |die| die.roll_die()}
+@roll.roll_all_dice
 @roll.dice.each { |die| p die.value()}
 
 p "Indicate which dice you want to hold:"
@@ -22,9 +22,9 @@ p "E.g. T, F, F, T, F"
 hold_choices = gets.chomp().upcase.split(",")
 @roll.roll_set_hold_status(hold_choices)
 
-p "Round 2"
+p "Roll 2"
 
-@roll.dice.each { |die| die.roll_die()}
+@roll.roll_all_dice
 @roll.dice.each { |die| p die.value()}
 
 p "Indicate which dice you want to hold:"
@@ -33,7 +33,7 @@ p "E.g. T, F, F, T, F"
 hold_choices = gets.chomp().upcase.split(",")
 @roll.roll_set_hold_status(hold_choices)
 
-p "Round 3"
+p "Roll 3"
 
-@roll.dice.each { |die| die.roll_die()}
+@roll.roll_all_dice
 @roll.dice.each { |die| p die.value()}
