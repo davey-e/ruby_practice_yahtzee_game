@@ -16,4 +16,8 @@ attr_reader :value, :hold
     end
   end
 
+  def die_set_hold_status(hold_status)
+    @hold = hold_status
+  end
+
 end

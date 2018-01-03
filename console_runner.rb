@@ -1,17 +1,39 @@
 require_relative("./models/die.rb")
 require_relative("./models/roll.rb")
+require_relative("./models/round.rb")
 
 
-  @die1 = Die.new()
-  @die2 = Die.new()
-  @die3 = Die.new()
-  @die4 = Die.new()
-  @die5 = Die.new()
-  @roll = Roll.new([@die1, @die2, @die3, @die4, @die5])
+@die1 = Die.new()
+@die2 = Die.new()
+@die3 = Die.new()
+@die4 = Die.new()
+@die5 = Die.new()
+@roll = Roll.new([@die1, @die2, @die3, @die4, @die5])
 
-  @roll.dice.each { |die| die.roll_die()}
+p "Welcome to the Yahtzee dice simulator"
+p "Your dice numbers for your first roll are:"
 
-  p "Welcome to the Yahtzee dice simulator"
-  p "Your dice numbers are:"
+@roll.dice.each { |die| die.roll_die()}
+@roll.dice.each { |die| p die.value()}
 
-  @roll.dice.each { |die| p die.value()}
+p "Indicate which dice you want to hold:"
+p "T = hold, F = Dont hold"
+p "E.g. T, F, F, T, F"
+hold_choices = gets.chomp().upcase.split(",")
+@roll.roll_set_hold_status(hold_choices)
+
+p "Round 2"
+
+@roll.dice.each { |die| die.roll_die()}
+@roll.dice.each { |die| p die.value()}
+
+p "Indicate which dice you want to hold:"
+p "T = hold, F = Dont hold"
+p "E.g. T, F, F, T, F"
+hold_choices = gets.chomp().upcase.split(",")
+@roll.roll_set_hold_status(hold_choices)
+
+p "Round 3"
+
+@roll.dice.each { |die| die.roll_die()}
+@roll.dice.each { |die| p die.value()}

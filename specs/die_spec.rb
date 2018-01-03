@@ -47,5 +47,11 @@ class DieTest < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_set_hold_status
+    @die2.die_set_hold_status(true)
+    expected = true
+    actual = @die2.hold
+    assert_equal(expected, actual)
+  end
 
 end
